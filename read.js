@@ -1,3 +1,4 @@
+var zzz;
 var codes = {
 javascript: {
 a: ['say','ask'],
@@ -28,7 +29,6 @@ function readFunction(code) {
 parameters = splitsplit(code,"/","$");
   for(var aa=0; aa<parameters.length; aa++) {
   if (parameters[aa].search("/")!==-1) {
-      var zzz;
     readFunction(parameters[aa]);
     parameters[aa] = zzz;
       }
