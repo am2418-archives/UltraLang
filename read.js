@@ -11,7 +11,7 @@ function splitsplit(t,c,n) {
         if (t[i+nn]===n) {
     nn++
     }
-    if (i+nn<t.length-1) {
+    if (i+nn<t.length) {
 
   if (t[i+nn]===c && nn%2===0) {
       rtrnlst.push("");
