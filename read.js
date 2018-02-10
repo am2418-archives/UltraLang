@@ -1,8 +1,8 @@
-var zzz;
+var result;
 var codes = {
 javascript: {
 a: ['say','ask'],
-  b: [function(params) {alert(params[1]);},function(params) {zzz=prompt(params[1]);}]
+  b: [function(params) {alert(params[1]);},function(params) {result=prompt(params[1],params[2]);}]
 }
 };
 function splitsplit(t,c,n) {
@@ -23,14 +23,14 @@ function splitsplit(t,c,n) {
   return rtrnlst;
 }
 
-var js = ['say','ask'];
+var js = codes.javascript.a;
 function readFunction(code) {
   var parameters = [];
-parameters = splitsplit(code,"/","$");
+parameters = splitsplit(code,"(",")");
   for(var aa=0; aa<parameters.length; aa++) {
-  if (parameters[aa].search("/")!==-1) {
+  if (parameters[aa].search(",")!==-1) {
     readFunction(parameters[aa]);
-    parameters[aa] = zzz;
+    parameters[aa] = result;
       }
   }
   if (js.indexOf(parameters[0])!==-1) {
