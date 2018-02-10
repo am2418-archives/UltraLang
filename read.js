@@ -1,7 +1,7 @@
 var codes = {
 javascript: {
-a: ['say'],
-  b: [function(params) {alert(params[1]);}]
+a: ['say','ask'],
+  b: [function(params) {alert(params[1]);},function(params) {zzz=prompt(params[1]);}]
 }
 };
 function splitsplit(t,c,n) {
@@ -21,10 +21,18 @@ function splitsplit(t,c,n) {
   }
   return rtrnlst;
 }
-var parameters = [];
-var js = ['say'];
+
+var js = ['say','ask'];
 function readFunction(code) {
+  var parameters = [];
 parameters = splitsplit(code,"/","$");
+  for(var aa=0; aa<parameters.length; aa++) {
+  if (parameters[aa].search("/")!==-1) {
+      var zzz;
+    readFunction(parameters[aa]);
+    parameters[aa] = zzz;
+      }
+  }
   if (js.indexOf(parameters[0])!==-1) {
 codes.javascript.b[codes.javascript.a.indexOf(parameters[0])](parameters);
 }
