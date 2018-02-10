@@ -7,8 +7,8 @@ a: ['say'],
 function splitsplit(t,c,n) {
   var rtrnlst = [""];
   var nn = 0;
-  for(var i=0; i<t.length-1; i++) {
-    if (i+nn<t.length) {
+  for(var i=0; i<t.length; i++) {
+    if (i+nn<t.length-1) {
     if (t[i+nn]===n) {
     nn++
     }
