@@ -8,6 +8,7 @@ function splitsplit(t,c,n) {
   var rtrnlst = [""];
   var nn = 0;
   for(var i=0; i<t.length; i++) {
+    if (i+nn<t.length) {
     if (t[i+nn]===n) {
     nn++
     }
@@ -15,7 +16,7 @@ function splitsplit(t,c,n) {
       rtrnlst.push("");
       } else {
       rtrnlst[rtrnlst.length-1] += t[i+nn];
-      }
+      }}
   }
   return rtrnlst;
 }
