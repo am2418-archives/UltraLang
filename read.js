@@ -8,10 +8,11 @@ function splitsplit(t,c,n) {
   var rtrnlst = [""];
   var nn = 0;
   for(var i=0; i<t.length; i++) {
-    if (i+nn<t.length-1) {
-    if (t[i+nn]===n) {
+        if (t[i+nn]===n) {
     nn++
     }
+    if (i+nn<t.length-1) {
+
   if (t[i+nn]===c && nn%2===0) {
       rtrnlst.push("");
       } else {
