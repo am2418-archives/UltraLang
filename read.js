@@ -10,11 +10,11 @@ function splitsplit(t,c,n,nnnn) {
   var nn = 0;
   var nnnnn = 0;
   for(var i=0; i<t.length; i++) {
-        if (t[i+nn]===n) {
+        if (t[i+nn]===n && nnnnn===0) {
     nn++;
          nnnnn++; 
     }
-     if (t[i+nn]===nnnn) {
+     if (t[i+nn]===nnnn && nnnnn===1) {
     nn++;
        nnnnn--;
     }
