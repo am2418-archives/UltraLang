@@ -34,7 +34,7 @@ function readFunction(code) {
   var parameters = [];
 parameters = splitsplit(code,"/","(",")");
   for(var aa=0; aa<parameters.length; aa++) {
-  if (parameters[aa].search(",")!==-1) {
+  if (parameters[aa].search("/")!==-1) {
     readFunction(parameters[aa]);
     parameters[aa] = result;
       }
