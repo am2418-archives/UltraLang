@@ -32,7 +32,7 @@ function splitsplit(t,c,n,nnnn) {
 var js = codes.javascript.a;
 function readFunction(code) {
   var parameters = [];
-parameters = splitsplit(code,"(",")");
+parameters = splitsplit(code,"/","(",")");
   for(var aa=0; aa<parameters.length; aa++) {
   if (parameters[aa].search(",")!==-1) {
     readFunction(parameters[aa]);
